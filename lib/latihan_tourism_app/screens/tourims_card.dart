@@ -19,18 +19,64 @@ class TourismCard extends StatelessWidget {
             arguments: tourism,
           );
         },
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
+        child: Row(
           children: [
-            Text(tourism.name, style: Theme.of(context).textTheme.titleLarge),
-            Text(
-              tourism.description,
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-              softWrap: true,
-              style: Theme.of(context).textTheme.labelMedium,
+            /// Card image thumbnail
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: 80,
+                minHeight: 80,
+                maxWidth: 120,
+                minWidth: 120,
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.network(tourism.image, fit: BoxFit.cover),
+              ),
+            ),
+
+            SizedBox.square(dimension: 8),
+
+            /// Card Information
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  /// Card Title
+                  Text(
+                    tourism.name,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+
+                  /// Card Address
+                  Row(
+                    children: [
+                      Icon(Icons.pin_drop),
+                      SizedBox.square(dimension: 6),
+                      Expanded(
+                        child: Text(
+                          tourism.address,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  SizedBox.square(dimension: 8),
+
+                  /// Card Likes
+                  Row(
+                    children: [
+                      Icon(Icons.favorite, color: Colors.red),
+                      SizedBox.square(dimension: 6),
+                      Expanded(child: Text(tourism.like.toString())),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
