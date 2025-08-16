@@ -1,6 +1,6 @@
-import 'package:design_ui_dengan_widget/latihan_tourism_app/routes/navigation_routes.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/routes/navigation_routes.dart';
 import 'package:flutter/material.dart';
-import 'package:design_ui_dengan_widget/latihan_tourism_app/models/tourism.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/models/tourism.dart';
 
 class TourismCard extends StatelessWidget {
   const TourismCard({super.key, required this.tourism});

@@ -1,4 +1,4 @@
-import 'package:design_ui_dengan_widget/latihan_tourism_app/models/tourism.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/models/tourism.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
