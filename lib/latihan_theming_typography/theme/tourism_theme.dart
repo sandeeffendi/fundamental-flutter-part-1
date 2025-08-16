@@ -1,5 +1,5 @@
-import 'package:design_ui_dengan_widget/latihan_tourism_app/style/tourism_colors.dart';
-import 'package:design_ui_dengan_widget/latihan_tourism_app/typography/tourism_text_style.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/style/tourism_colors.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/typography/tourism_text_style.dart';
 import 'package:flutter/material.dart';
 
 class TourismTheme {

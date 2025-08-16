@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:design_ui_dengan_widget/latihan_tourism_app/screens/tourims_card.dart';
-import 'package:design_ui_dengan_widget/latihan_tourism_app/models/tourism.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/tourims_card.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/models/tourism.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

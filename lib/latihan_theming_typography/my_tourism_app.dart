@@ -1,8 +1,8 @@
-import 'package:design_ui_dengan_widget/latihan_tourism_app/models/tourism.dart';
-import 'package:design_ui_dengan_widget/latihan_tourism_app/routes/navigation_routes.dart';
-import 'package:design_ui_dengan_widget/latihan_tourism_app/screens/details_screen.dart';
-import 'package:design_ui_dengan_widget/latihan_tourism_app/screens/home_screen.dart';
-import 'package:design_ui_dengan_widget/latihan_tourism_app/theme/tourism_theme.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/models/tourism.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/routes/navigation_routes.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/details_screen.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/home_screen.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/theme/tourism_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
