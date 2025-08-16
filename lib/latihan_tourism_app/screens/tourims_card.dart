@@ -47,7 +47,7 @@ class TourismCard extends StatelessWidget {
                   /// Card Title
                   Text(
                     tourism.name,
-                    style: Theme.of(context).textTheme.titleLarge,
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
 
                   /// Card Address
@@ -60,6 +60,7 @@ class TourismCard extends StatelessWidget {
                           tourism.address,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
+                          style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ),
                     ],
@@ -72,7 +73,12 @@ class TourismCard extends StatelessWidget {
                     children: [
                       Icon(Icons.favorite, color: Colors.red),
                       SizedBox.square(dimension: 6),
-                      Expanded(child: Text(tourism.like.toString())),
+                      Expanded(
+                        child: Text(
+                          tourism.like.toString(),
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                      ),
                     ],
                   ),
                 ],

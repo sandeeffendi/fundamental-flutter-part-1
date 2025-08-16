@@ -27,27 +27,38 @@ class DetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     /// Title
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        /// Tourism name
-                        Text(
-                          tourism.name,
-                          style: Theme.of(context).textTheme.headlineSmall,
-                        ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          /// Tourism name
+                          Text(
+                            tourism.name,
+                            style: Theme.of(context).textTheme.headlineLarge,
+                            softWrap: true,
+                          ),
 
-                        /// Tourism address
-                        Text(
-                          tourism.address,
-                          style: Theme.of(context).textTheme.labelLarge,
-                        ),
-                      ],
+                          SizedBox.square(dimension: 6),
+
+                          /// Tourism address
+                          Text(
+                            tourism.address,
+                            style: Theme.of(context).textTheme.labelLarge
+                                ?.copyWith(fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
                     ),
+
+                    SizedBox.square(dimension: 7),
                     Row(
                       children: [
                         Icon(Icons.favorite, color: Colors.red),
                         SizedBox(width: 5),
-                        Text(tourism.like.toString()),
+                        Text(
+                          tourism.like.toString(),
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
                       ],
                     ),
                   ],
@@ -57,7 +68,10 @@ class DetailsScreen extends StatelessWidget {
               /// Tourism Description
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25, vertical: 25),
-                child: Text(tourism.description),
+                child: Text(
+                  tourism.description,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
               ),
             ],
           ),
