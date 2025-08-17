@@ -18,7 +18,10 @@ class DetailsScreen extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(25),
-                child: Image.network(tourism.image),
+                child: Hero(
+                  tag: tourism.image,
+                  child: Image.network(tourism.image),
+                ),
               ),
               Padding(
                 /// Tourism Image
@@ -32,10 +35,13 @@ class DetailsScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           /// Tourism name
-                          Text(
-                            tourism.name,
-                            style: Theme.of(context).textTheme.headlineLarge,
-                            softWrap: true,
+                          Hero(
+                            tag: tourism.name,
+                            child: Text(
+                              tourism.name,
+                              style: Theme.of(context).textTheme.headlineLarge,
+                              softWrap: true,
+                            ),
                           ),
 
                           SizedBox.square(dimension: 6),

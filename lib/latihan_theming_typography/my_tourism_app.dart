@@ -3,7 +3,6 @@ import 'package:design_ui_dengan_widget/latihan_theming_typography/routes/naviga
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/details_screen.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/home_screen.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/theme/tourism_theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyTourismApp extends StatelessWidget {

@@ -31,7 +31,10 @@ class TourismCard extends StatelessWidget {
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: Image.network(tourism.image, fit: BoxFit.cover),
+                child: Hero(
+                  tag: tourism.image,
+                  child: Image.network(tourism.image, fit: BoxFit.cover),
+                ),
               ),
             ),
 
@@ -45,9 +48,12 @@ class TourismCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   /// Card Title
-                  Text(
-                    tourism.name,
-                    style: Theme.of(context).textTheme.titleMedium,
+                  Hero(
+                    tag: tourism.name,
+                    child: Text(
+                      tourism.name,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                   ),
 
                   /// Card Address
