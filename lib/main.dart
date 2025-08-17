@@ -1,12 +1,13 @@
 import 'package:design_ui_dengan_widget/latihan_cupertino_app/my_cupertino_app.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/models/tourism.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/my_tourism_app.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/routes/navigation_routes.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/details_screen.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyCupertinoApp());
+  runApp(MyTourismApp());
 }
 
 class MyApp extends StatelessWidget {
