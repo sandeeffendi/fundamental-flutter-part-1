@@ -1,3 +1,4 @@
+import 'package:design_ui_dengan_widget/latihan_grouping_list_sliver_widget/screen/my_course_app.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/models/tourism.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/my_tourism_app.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/routes/navigation_routes.dart';
@@ -6,7 +7,7 @@ import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/home_
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyTourismApp());
+  runApp(MyCourseApp());
 }
 
 class MyApp extends StatelessWidget {
