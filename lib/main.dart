@@ -1,3 +1,4 @@
+import 'package:design_ui_dengan_widget/latihan_inherited_widget/inherited_widget_homepage.dart';
 import 'package:design_ui_dengan_widget/latihan_tourism_app/models/tourism.dart';
 import 'package:design_ui_dengan_widget/latihan_tourism_app/my_tourism_app.dart';
 import 'package:design_ui_dengan_widget/latihan_tourism_app/routes/navigation_routes.dart';
@@ -16,13 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: NavigationRoutes.homeRoute.name,
-      routes: {
-        NavigationRoutes.homeRoute.name: (context) => HomeScreen(),
-        NavigationRoutes.detailRoute.name: (context) => DetailsScreen(
-          tourism: ModalRoute.of(context)?.settings.arguments as Tourism,
-        ),
-      },
+      title: 'Inherited Widget Homepage',
+      home: InheritedWidgetHomepage(),
     );
   }
 }
