@@ -7,7 +7,7 @@ import 'package:design_ui_dengan_widget/latihan_tourism_app/screens/home_screen.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyTourismApp());
+  runApp(InheritedWidgetHomepage());
 }
 
 class MyApp extends StatelessWidget {

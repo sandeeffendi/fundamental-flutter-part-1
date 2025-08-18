@@ -28,6 +28,10 @@ class _InheritedWidgetHomepageState extends State<InheritedWidgetHomepage> {
       child: Scaffold(
         appBar: AppBar(title: const AppBarWidget()),
         body: BodyWidget(),
+        floatingActionButton: ElevatedButton(
+          onPressed: _increment,
+          child: Icon(Icons.add),
+        ),
       ),
     );
   }
