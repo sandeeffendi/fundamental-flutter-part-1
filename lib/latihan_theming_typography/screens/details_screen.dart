@@ -1,4 +1,5 @@
 import 'package:design_ui_dengan_widget/latihan_theming_typography/models/tourism.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/detail/bookmark_icon_widget.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -9,7 +10,10 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Detail Screen')),
+      appBar: AppBar(
+        title: Text('Detail Screen'),
+        actions: [BookmarkIconWidget(tourism: tourism)],
+      ),
       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       body: SingleChildScrollView(
         child: Center(
