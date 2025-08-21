@@ -12,17 +12,26 @@ class MainScreen extends StatefulWidget {
 class _MyWidgetState extends State<MainScreen> {
   int _indexSelectedBottomBar = 0;
 
+  final List<Widget> _pages = [
+    /// Home screen
+    HomeScreen(),
+
+    /// Bookmark screen
+    BookmarkTourismList(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: switch (_indexSelectedBottomBar) {
-        case : 0
-         return const HomeScreen();
-
-      },
+      body: _pages[_indexSelectedBottomBar],
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indexSelectedBottomBar,
+        onTap: (index) {
+          setState(() {
+            _indexSelectedBottomBar = index;
+          });
+        },
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -31,8 +40,8 @@ class _MyWidgetState extends State<MainScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bookmark),
-            label: 'home',
-            tooltip: 'home',
+            label: 'bookmark',
+            tooltip: 'bookmark',
           ),
         ],
       ),

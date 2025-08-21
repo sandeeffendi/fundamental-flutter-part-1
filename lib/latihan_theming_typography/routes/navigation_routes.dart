@@ -1,7 +1,6 @@
 enum NavigationRoutes {
-  homeRoute('/'),
-  detailRoute('/detail'),
-  bookmarkRoute('/bookmark');
+  mainRoute('/'),
+  detailRoute('/detail');
 
   const NavigationRoutes(this.name);
 
