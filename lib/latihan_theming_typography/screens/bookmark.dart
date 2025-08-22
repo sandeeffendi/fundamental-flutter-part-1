@@ -1,5 +1,5 @@
 import 'package:design_ui_dengan_widget/latihan_theming_typography/models/tourism.dart';
-import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/tourims_card.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/tourism_card.dart';
 import 'package:flutter/material.dart';
 
 class BookmarkTourismList extends StatelessWidget {

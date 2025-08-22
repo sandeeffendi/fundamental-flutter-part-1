@@ -2,12 +2,20 @@ import 'package:design_ui_dengan_widget/latihan_theming_typography/models/touris
 import 'package:design_ui_dengan_widget/latihan_theming_typography/my_tourism_app.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/routes/navigation_routes.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/details_screen.dart';
-import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/home_screen.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/main_screen.dart';
+import 'package:design_ui_dengan_widget/provider/bottom_navigation_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyTourismApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) =>
+          /// Bottom Navigation Index Provider
+          BottomNavigationProvider(),
+      child: MyTourismApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,9 +25,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+
+      /// Initial route to main screen
       initialRoute: NavigationRoutes.mainRoute.name,
       routes: {
+        /// Main screen route
         NavigationRoutes.mainRoute.name: (context) => MainScreen(),
+
+        /// Detail screen route
+        /// Receive passed argument from TourismCard that build on home screen
         NavigationRoutes.detailRoute.name: (context) => DetailsScreen(
           tourism: ModalRoute.of(context)?.settings.arguments as Tourism,
         ),

@@ -1,16 +1,11 @@
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/bookmark.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/home_screen.dart';
+import 'package:design_ui_dengan_widget/provider/bottom_navigation_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
-
-  @override
-  State<MainScreen> createState() => _MyWidgetState();
-}
-
-class _MyWidgetState extends State<MainScreen> {
-  int _indexSelectedBottomBar = 0;
+class MainScreen extends StatelessWidget {
+  MainScreen({super.key});
 
   final List<Widget> _pages = [
     /// Home screen
@@ -23,14 +18,16 @@ class _MyWidgetState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_indexSelectedBottomBar],
+      body: Consumer<BottomNavigationProvider>(
+        builder: (context, value, child) {
+          return _pages[value.indexBottomBar];
+        },
+      ),
 
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _indexSelectedBottomBar,
+        currentIndex: context.watch<BottomNavigationProvider>().indexBottomBar,
         onTap: (index) {
-          setState(() {
-            _indexSelectedBottomBar = index;
-          });
+          context.read<BottomNavigationProvider>().setIndexBottomBar = index;
         },
         items: const [
           BottomNavigationBarItem(

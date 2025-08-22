@@ -1,7 +1,6 @@
 import 'package:design_ui_dengan_widget/latihan_theming_typography/models/tourism.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/routes/navigation_routes.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/details_screen.dart';
-import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/home_screen.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/main_screen.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/theme/tourism_theme.dart';
 import 'package:flutter/material.dart';
