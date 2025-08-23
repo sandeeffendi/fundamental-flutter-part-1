@@ -6,20 +6,26 @@ class DetailsScreen extends StatelessWidget {
   final Tourism tourism;
 
   const DetailsScreen({super.key, required this.tourism});
-
+r
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /// Detail screen App bar
       appBar: AppBar(
         title: Text('Detail Screen'),
+
+        /// Detail screen Bookmark Icon Widget
         actions: [BookmarkIconWidget(tourism: tourism)],
       ),
       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+
+      /// Detail screen Body
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              /// Detail screen tourism image
               Padding(
                 padding: const EdgeInsets.all(25),
                 child: Hero(
@@ -27,14 +33,15 @@ class DetailsScreen extends StatelessWidget {
                   child: Image.network(tourism.image),
                 ),
               ),
+
+              /// Detail screen tourism information
               Padding(
-                /// Tourism Image
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    /// Title
                     Expanded(
+                      /// Detail screen tourism name & address
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -61,6 +68,8 @@ class DetailsScreen extends StatelessWidget {
                     ),
 
                     SizedBox.square(dimension: 7),
+
+                    /// Detail screen tourism likes
                     Row(
                       children: [
                         Icon(Icons.favorite, color: Colors.red),
@@ -75,7 +84,7 @@ class DetailsScreen extends StatelessWidget {
                 ),
               ),
 
-              /// Tourism Description
+              /// Detail screen Tourism Description
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25, vertical: 25),
                 child: Text(

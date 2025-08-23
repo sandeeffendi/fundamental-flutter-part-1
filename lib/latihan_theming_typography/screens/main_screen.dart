@@ -1,4 +1,4 @@
-import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/bookmark.dart';
+import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/bookmark_screen.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/home_screen.dart';
 import 'package:design_ui_dengan_widget/provider/bottom_navigation_provider.dart';
 import 'package:flutter/material.dart';
