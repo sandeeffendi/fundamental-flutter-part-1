@@ -1,12 +1,14 @@
+import 'package:design_ui_dengan_widget/latihan_theming_typography/detail/bookmark_icon_widget.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/models/tourism.dart';
-import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/detail/bookmark_icon_widget.dart';
+import 'package:design_ui_dengan_widget/provider/bookmark_icon_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Tourism tourism;
 
   const DetailsScreen({super.key, required this.tourism});
-r
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +17,12 @@ r
         title: Text('Detail Screen'),
 
         /// Detail screen Bookmark Icon Widget
-        actions: [BookmarkIconWidget(tourism: tourism)],
+        actions: [
+          ChangeNotifierProvider(
+            create: (context) => BookmarkIconProvider(),
+            child: BookmarkIconWidget(tourism: tourism),
+          ),
+        ],
       ),
       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
 

@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 class BookmarkListProvider extends ChangeNotifier {
   final List<Tourism> _bookmarkList = [];
 
-  get bookmarkList => _bookmarkList;
+  List<Tourism> get bookmarkList => _bookmarkList;
 
   /// Add item to bookmark list method
   void addBookmarkList(Tourism value) {

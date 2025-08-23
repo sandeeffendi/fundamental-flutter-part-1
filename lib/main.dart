@@ -3,18 +3,21 @@ import 'package:design_ui_dengan_widget/latihan_theming_typography/my_tourism_ap
 import 'package:design_ui_dengan_widget/latihan_theming_typography/routes/navigation_routes.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/details_screen.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/main_screen.dart';
+import 'package:design_ui_dengan_widget/provider/bookmark_icon_provider.dart';
+import 'package:design_ui_dengan_widget/provider/bookmark_list_provider.dart';
 import 'package:design_ui_dengan_widget/provider/bottom_navigation_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) =>
-          /// Bottom Navigation Index Provider
-          BottomNavigationProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => BottomNavigationProvider()),
+        ChangeNotifierProvider(create: (context) => BookmarkListProvider()),
+      ],
       child: MyTourismApp(),
-    ),
+  ),
   );
 }
 
