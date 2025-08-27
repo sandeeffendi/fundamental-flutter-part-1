@@ -1,4 +1,3 @@
-import 'package:design_ui_dengan_widget/latihan_theming_typography/routes/navigation_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/data/models/tourism.dart';
 

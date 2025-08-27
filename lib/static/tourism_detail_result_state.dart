@@ -9,7 +9,7 @@ class TourismDetailLoadingState extends TourismDetailResultState {}
 class TourismDetailLoadedState extends TourismDetailResultState {
   final Tourism data;
 
-  TourismDetailLoadedState(this.data);
+  TourismDetailLoadedState({required this.data});
 }
 
 class TourismDetailErrorState extends TourismDetailResultState {

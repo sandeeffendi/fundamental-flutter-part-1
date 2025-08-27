@@ -1,12 +1,11 @@
 import 'dart:async';
 
-import 'package:design_ui_dengan_widget/latihan_theming_typography/data/api/api_services.dart';
-import 'package:design_ui_dengan_widget/latihan_theming_typography/data/models/tourism_detail_response.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/detail/bookmark_icon_widget.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/detail/body_of_detail_screen.dart';
 import 'package:design_ui_dengan_widget/provider/bookmark_icon_provider.dart';
+import 'package:design_ui_dengan_widget/provider/detail/tourism_detail_provider.dart';
+import 'package:design_ui_dengan_widget/static/tourism_detail_result_state.dart';
 import 'package:flutter/material.dart';
-import 'package:design_ui_dengan_widget/latihan_theming_typography/data/models/tourism.dart';
 import 'package:provider/provider.dart';
 
 class DetailsScreen extends StatefulWidget {
@@ -19,13 +18,15 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-  final Completer<Tourism> _completerTourism = Completer();
-  late Future<TourismDetailResponse> _futureTourismDetail;
-
   @override
   void initState() {
     super.initState();
-    _futureTourismDetail = ApiServices().getDetailList(widget.tourismId);
+
+    Future.microtask(() {
+      context.read<TourismDetailProvider>().fetchTourismProvider(
+        widget.tourismId,
+      );
+    });
   }
 
   @override
@@ -39,13 +40,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
         actions: [
           ChangeNotifierProvider(
             create: (context) => BookmarkIconProvider(),
-            child: FutureBuilder(
-              future: _completerTourism.future,
-              builder: (context, snapshot) {
-                return switch (snapshot.connectionState) {
-                  ConnectionState.done => BookmarkIconWidget(
-                    tourism: snapshot.data!,
-                  ),
+            child: Consumer<TourismDetailProvider>(
+              builder: (context, value, child) {
+                return switch (value.resultState) {
+                  TourismDetailLoadedState(data: var tourism) =>
+                    BookmarkIconWidget(tourism: tourism),
                   _ => const SizedBox(),
                 };
               },
@@ -53,32 +52,29 @@ class _DetailsScreenState extends State<DetailsScreen> {
           ),
         ],
       ),
+
       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
 
-      /// Detail screen Body
-      body: FutureBuilder(
-        future: _futureTourismDetail,
-        builder: (context, snapshot) {
-          switch (snapshot.connectionState) {
-            /// Connection is waiting
-            /// Return Circular Progress Indicator
-            case ConnectionState.waiting:
-              return Center(child: CircularProgressIndicator());
+      /// Body of detail screen with TourismDetailProvider Data
+      body: Consumer<TourismDetailProvider>(
+        builder: (context, value, child) {
+          return switch (value.resultState) {
+            /// Loading State value
+            TourismDetailLoadingState() => const Center(
+              child: CircularProgressIndicator(),
+            ),
 
-            /// Connection is done
-            case ConnectionState.done:
-              if (snapshot.hasError) {
-                return Center(child: Text(snapshot.hasError.toString()));
-              }
+            /// Loaded State value
+            TourismDetailLoadedState(data: var tourismDetail) =>
+              BodyOfDetailScreen(tourism: tourismDetail),
 
-              final tourismData = snapshot.data!.place;
-              _completerTourism.complete(tourismData);
+            /// Error State value
+            TourismDetailErrorState(error: var message) => Center(
+              child: Text(message),
+            ),
 
-              return BodyOfDetailScreen(tourism: tourismData);
-
-            default:
-              return const SizedBox();
-          }
+            _ => const SizedBox(),
+          };
         },
       ),
     );

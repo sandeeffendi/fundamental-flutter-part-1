@@ -36,20 +36,6 @@ class _BookmarkIconWidgetState extends State<BookmarkIconWidget> {
     super.initState();
   }
 
-  _onTapBookMark(Tourism value) {
-    final bookmarkIconList = context.read<BookmarkIconProvider>();
-    final bookmarkTourismList = context.read<BookmarkListProvider>();
-    final isBookmarked = bookmarkIconList.isBookmarked;
-
-    if (!isBookmarked) {
-      bookmarkTourismList.addBookmarkList(value);
-    } else {
-      bookmarkTourismList.removeBookmarkList(value);
-    }
-
-    bookmarkIconList.isBookmarked == !isBookmarked;
-  }
-
   @override
   Widget build(BuildContext context) {
     return IconButton(

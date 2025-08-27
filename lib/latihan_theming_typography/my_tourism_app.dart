@@ -1,4 +1,3 @@
-import 'package:design_ui_dengan_widget/latihan_theming_typography/data/models/tourism.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/routes/navigation_routes.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/detail/details_screen.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/main/main_screen.dart';

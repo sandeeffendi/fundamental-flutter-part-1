@@ -1,11 +1,8 @@
-import 'package:design_ui_dengan_widget/latihan_theming_typography/data/api/api_services.dart';
-import 'package:design_ui_dengan_widget/latihan_theming_typography/data/models/tourism_list_response.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/routes/navigation_routes.dart';
 import 'package:design_ui_dengan_widget/provider/home/tourism_list_provider.dart';
 import 'package:design_ui_dengan_widget/static/tourism_list_result_state.dart';
 import 'package:flutter/material.dart';
 import 'package:design_ui_dengan_widget/latihan_theming_typography/screens/home/tourism_card.dart';
-import 'package:design_ui_dengan_widget/latihan_theming_typography/data/models/tourism.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {

@@ -1,6 +1,5 @@
 import 'package:design_ui_dengan_widget/latihan_theming_typography/data/api/api_services.dart';
 import 'package:design_ui_dengan_widget/static/tourism_detail_result_state.dart';
-import 'package:design_ui_dengan_widget/static/tourism_list_result_state.dart';
 import 'package:flutter/material.dart';
 
 class TourismDetailProvider extends ChangeNotifier {
@@ -23,7 +22,7 @@ class TourismDetailProvider extends ChangeNotifier {
         _resultState = TourismDetailErrorState(result.message);
         notifyListeners();
       } else {
-        _resultState = TourismDetailLoadedState(result.place);
+        _resultState = TourismDetailLoadedState(data: result.place);
         notifyListeners();
       }
     } on Exception catch (e) {
