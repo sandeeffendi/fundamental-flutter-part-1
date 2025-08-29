@@ -8,7 +8,6 @@ class MyTourismApp extends StatelessWidget {
   const MyTourismApp({super.key});
 
   @override
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'My Tourism App',
