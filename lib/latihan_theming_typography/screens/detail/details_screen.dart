@@ -21,7 +21,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   void initState() {
     super.initState();
-
     Future.microtask(() {
       context.read<TourismDetailProvider>().fetchTourismProvider(
         widget.tourismId,
