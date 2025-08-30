@@ -20,8 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
     // _futureTourismResponse = ApiServices().getTourismList();
     super.initState();
 
-    Future.microtask(() {
-      context.read<TourismListProvider>().fetchTourismList();
+    Future.microtask(() async {
+      await context.read<TourismListProvider>().fetchTourismList();
     });
   }
 

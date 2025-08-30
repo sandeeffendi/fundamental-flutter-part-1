@@ -18,7 +18,7 @@ void main() {
         ChangeNotifierProvider(create: (context) => BookmarkListProvider()),
         Provider(create: (context) => ApiServices()),
         ChangeNotifierProvider(
-          create: (context) => TourismListProvider(context.read<ApiServices>()),
+        create: (context) => TourismListProvider(context.read<ApiServices>()),
         ),
         ChangeNotifierProvider(
           create: (context) =>

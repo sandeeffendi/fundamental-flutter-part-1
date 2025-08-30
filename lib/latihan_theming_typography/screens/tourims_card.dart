@@ -18,7 +18,7 @@ class TourismCard extends StatelessWidget {
             NavigationRoutes.detailRoute.name,
             arguments: tourism,
           );
-        },
+      },
         child: Row(
           children: [
             /// Card image thumbnail
